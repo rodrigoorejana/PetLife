@@ -1,0 +1,298 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    color: #263138;
+}
+
+button {
+    background: none;
+    outline: none;
+    border: none;
+}
+
+header {
+    background-color: #FF9A6C;
+}
+
+header li {
+    list-style: none;
+}
+
+header a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nav-bar {
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 24px;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+.nav-link {
+    transition: 0.7s ease;
+}
+
+.nav-link:hover {
+    color: #263138;
+}
+
+#hamburguer {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #ffffff;
+}
+
+section {
+    padding: 24px 80px 128px 80px;
+    position: relative;
+}
+
+#inicio {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+}
+
+h1,
+h2 {
+    font-weight: 600;
+    font-size: 32px;
+    margin-bottom: 32px;
+}
+
+.paragraph {
+
+    line-height: 150%;
+    margin-bottom: 32px;
+
+}
+
+.button {
+    background-color: #FF725E;
+    padding: 16px 32px;
+    border-radius: 8px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.button-transparent {
+    background-color: transparent;
+    color: #FF725E;
+    padding: 16px 32px;
+    text-underline-offset: 4px;
+}
+
+.absolute {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: -10;
+}
+
+#clinica {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+}
+
+#clinica li {
+    margin-bottom: 16px;
+    margin-left: 32px;
+}
+
+#farmacia {
+    text-align: center;
+}
+
+#farmacia img {
+    margin: 64px auto;
+}
+
+#farmacia .paragraph {
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+#duvidas {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+
+}
+
+.duvida {
+    position: relative;
+}
+
+.duvida h3 {
+    border: 2px solid #FF725E;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 24px;
+}
+
+.duvida img {
+    position: absolute;
+    top: 32px;
+    right: 24px;
+}
+
+.duvida .paragraph {
+    border-right: 1px solid #FF725E;
+    border-bottom: 1px solid #FF725E;
+    border-left: 1px solid #FF725E;
+    border-radius: 0 0 8px 8px;
+    margin-top: -8px;
+    padding: 0 24px;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: .2s;
+}
+
+.duvida.ativa .paragraph {
+    height: fit-content;
+    opacity: 1;
+    padding: 24px;
+}
+
+footer {
+    background-color: rgba(255, 152, 108, 0.25);
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+    padding: 64px 80px;
+}
+
+footer img,
+footer .title {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+footer div a {
+    color: #263138;
+    display: block;
+    margin-bottom: 16px;
+    text-decoration: none;
+}
+
+footer p {
+    margin-bottom: 16px;
+}
+
+footer p a {
+    color: #263138;
+    text-decoration: none;
+}
+
+#copyright {
+    background-color: #263138;
+    padding: 24px;
+    text-align: center;
+    color: #ffffff;
+}
+
+#copyright a {
+    color: #FF9A6C;
+}
+
+@media screen and (max-width: 768px) {
+
+    *{
+        text-align: center;
+    }
+    section {
+        display: flex;
+        flex-direction: column;
+        padding: 0 10px;
+    }
+
+    section>img {
+        width: 100%;
+    }
+    #hamburguer {
+        display: block;
+    }
+    #hamburguer.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    #hamburguer.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    #hamburguer.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: #FF725E;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        z-index: 999;
+    }
+    .nav-item {
+        width: 100%;
+    }
+    .nav-link {
+        display: block;
+        padding: 16px 0;
+        width: 100%;
+    }
+    .nav-menu.active {
+        left: 0;
+    }
+    .button{
+        padding: 10px;
+    }
+    .button-transparent{
+        padding: 10px;
+        
+    }
+    .absolute{
+        display: none;
+    }
+    #clinica{
+        margin-top: 1rem;
+    }
+#duvidas img{
+    margin: 10px 10px;
+}
+footer {
+    
+    gap: 20px;
+    padding: 16px 20px;
+}
+}
